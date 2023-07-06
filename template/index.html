@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #btn{
+            background-color: cornflowerblue;
+            padding: 10px 20px;
+        }
+        #upd{
+            background-color: rgb(32, 255, 32);
+            color: black;
+        }
+
+        #del{
+            background-color: red;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome</h1><br>
+    <a href="{% url 'new' %}"><button id="btn">Add New </button></a><br>
+    <br>
+    <table border="1">
+        <tr>
+            <th>ID:-</th>
+            <th>Name:-</th>
+            <th>Department</th>
+            <th>Address:-</th>
+            <th>Action</th>
+        </tr>
+        {% for e in employee %}
+       <tr>
+           <td>{{e.id}}</td>
+           <td>{{e.name}}</td>
+           <td>{{e.deptt_id}} </td>
+           <td>{{e.address}} </td>
+           <td>
+               <a href="update/{{e.id}}"><button id="upd">Update</button></a>
+               <a href="delete/{{e.id}}"><button id="del">Delete</button></a>
+           </td>
+       </tr>
+       {% endfor %}
+    </table>
+
+    <!-- <b>ID:-</b>{{e.id}} <br>
+    <b>Name:-</b>{{e.name}} <br>
+    <b>address:-</b>{{e.address}} <br> -->
+</body>
+
+</html>

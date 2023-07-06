@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Employee</title>
+</head>
+<body>
+    <h1>Fill the details</h1>
+    <form action="/changedata/{{emp.id}}" method="post">
+        {% csrf_token %}
+        <div>
+            <label for="">Name:-</label> <br>
+            <input type="text" name="name" value="{{emp.name}}">
+        </div>
+        <br>
+        <div>
+            <label for="">Department ID:-</label> <br>
+            <input type="text" name="deptt" value="{{emp.deptt_id}}">
+        </div>
+        <br>
+        <div>
+            <label for="">Address:-</label> <br>
+           <textarea name="address" id="" cols="70" rows="10">{{emp.address}}</textarea>
+        </div>
+        <br>
+        <input type="submit" value="Update" >
+    </form>
+
+</body>
+</html>
